@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Flower Class Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Weather Condition" placeholder="Weather Condition" required="required" />
+        <input type="text" name="Dew" placeholder="Dew" required="required" />
+		<input type="text" name="Fog" placeholder="Fog" required="required" />
+		<input type="text" name="Humidity" placeholder="Humidity" required="required" />
+        <input type="text" name="Pressure" placeholder="Pressure" required="required" />
+        <input type="text" name="Temperature" placeholder="Temperature" required="required" />
+		<input type="text" name="Thunder" placeholder="Thunder" required="required" />
+		<input type="text" name="Vism" placeholder="Vism" required="required" />
+        <input type="text" name="Wind direction" placeholder="Wind direction" required="required" />
+        <input type="text" name="Wind Speed" placeholder="Wind Speed" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
